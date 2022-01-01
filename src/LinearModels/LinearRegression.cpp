@@ -1,10 +1,8 @@
 #include "../../include/sklearn/LinearModels/LinearRegression.h"
 
 
-void LinearRegression::fit(const Matrix& X, const Matrix& y) {
+void LinearRegression::fit(const Matrix& X, const Matrix& y, int max_iter) {
     weight = Matrix(1, X.colCount());
-
-    int max_iter = 2000;
 
     while(max_iter) {
         Matrix gradient = Matrix(1, X.colCount());
@@ -28,7 +26,5 @@ void LinearRegression::fit(const Matrix& X, const Matrix& y) {
 }
 
 Matrix LinearRegression::predict(const Matrix& X) const {
-    Matrix result = X * weight.T();
-
     return X * weight.T();
 }

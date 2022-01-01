@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../include/sklearn/LinearModels/LinearRegression.h"
+#include "../include/sklearn/Metrics/MeanSquaredError.h"
 
 int main() {
     Matrix X({
@@ -18,9 +19,7 @@ int main() {
     lr.fit(X, y);
     Matrix result = lr.predict(X);
 
-    for(int i = 0; i < result.rowCount(); i++) {
-        std::cout << result.getElement(i, 0) << std::endl;
-    }
+    std::cout << MeanSquaredError()(y, result); // 0.001553
 
     return 0;
 }

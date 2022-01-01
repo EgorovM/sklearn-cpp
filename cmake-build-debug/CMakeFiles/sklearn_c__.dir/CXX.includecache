@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/michil/projects/sklearn_c++/include/sklearn/Base/BaseEstimator.h
+../../utils/Matrix.h
+/Users/michil/projects/sklearn_c++/include/utils/Matrix.h
+
+/Users/michil/projects/sklearn_c++/include/sklearn/LinearModels/LinearRegression.h
+../Base/BaseEstimator.h
+/Users/michil/projects/sklearn_c++/include/sklearn/Base/BaseEstimator.h
+
+/Users/michil/projects/sklearn_c++/include/utils/Matrix.h
+vector
+-
+
+/Users/michil/projects/sklearn_c++/src/LinearModels/LinearRegression.cpp
+../../include/sklearn/LinearModels/LinearRegression.h
+/Users/michil/projects/sklearn_c++/include/sklearn/LinearModels/LinearRegression.h
+

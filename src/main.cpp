@@ -1,25 +1,29 @@
 #include <iostream>
 #include "../include/sklearn/LinearModels/LogisticRegression.h"
 #include "../include/sklearn/Metrics/AccuracyScore.h"
+#include "../include/utils/CsvReader.h"
 
 int main() {
-    Matrix X({
-         {1, 0, 1, 0, 0},
-         {0, 1, 1, 1, 0},
-         {0, 0, 1, 0, 0},
-    });
-    Matrix y({
-        {1},
-        {1},
-        {0},
-    });
+    CsvReader csv("../data/breast.csv");
+    Matrix result = csv.read();
+    Matrix X(result.rowCount(), result.colCount() - 1);
+    Matrix y(result.rowCount(), 1);
+
+    for(int i = 0; i < result.rowCount(); i++) {
+        for(int j = 0; j < result.colCount(); j++) {
+            if(j == result.colCount() - 1) {
+                y.setElement(i, 0, result.getElement(i, j));
+            }else{
+                X.setElement(i, j, result.getElement(i, j));
+            }
+        }
+    }
 
     LogisticRegression lr;
 
     lr.fit(X, y);
-    Matrix result = lr.predict(X);
 
-    std::cout << AccuracyScore()(y, result); // 0.666667
+    std::cout << AccuracyScore()(lr.predict(X), y);  // 0.917399
 
     return 0;
 }

@@ -16,6 +16,7 @@ add_executable(sklearn_c__
         include/sklearn/Metrics/MeanSquaredError.h
 
         include/utils/Matrix.h
+        include/utils/CsvReader.h
 
         src/LinearModels/LinearRegression.cpp
         src/LinearModels/LogisticRegression.cpp
@@ -24,6 +25,7 @@ add_executable(sklearn_c__
         src/Metrics/MeanSquaredError.cpp
 
         src/utils/Matrix.cpp
+        src/utils/CsvReader.cpp
 
         src/main.cpp
         )

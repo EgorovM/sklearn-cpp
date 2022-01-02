@@ -11,7 +11,7 @@ class LinearRegression {
 public:
     LinearRegression() = default;
     LinearRegression(float lr) : learning_rate(lr){};
-    void fit(const Matrix&, const Matrix&, int = 2000);
+    void fit(const Matrix&, const Matrix&, int = 1000);
     Matrix predict(const Matrix&) const;
 private:
     float learning_rate{0.001};

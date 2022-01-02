@@ -5,7 +5,7 @@
 #ifndef SKLEARN_C___MEANSQUAREDERROR_H
 #define SKLEARN_C___MEANSQUAREDERROR_H
 
-#include "../../sklearn/base/BaseMetric.h"
+#include "../Base/BaseMetric.h"
 
 class MeanSquaredError {
 public:

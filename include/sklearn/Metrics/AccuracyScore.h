@@ -5,9 +5,10 @@
 #ifndef SKLEARN_C___ACCURACY_H
 #define SKLEARN_C___ACCURACY_H
 
-#include "../../sklearn/base/BaseMetric.h"
+#include "../Base/BaseMetric.h"
 
 class AccuracyScore {
+public:
     double operator()(const Matrix&, const Matrix&) const;
 };
 

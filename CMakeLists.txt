@@ -10,6 +10,7 @@ add_executable(sklearn_c__
         include/sklearn/Base/BaseMetric.h
 
         include/sklearn/LinearModels/LinearRegression.h
+        include/sklearn/LinearModels/LogisticRegression.h
 
         include/sklearn/Metrics/AccuracyScore.h
         include/sklearn/Metrics/MeanSquaredError.h
@@ -17,6 +18,7 @@ add_executable(sklearn_c__
         include/utils/Matrix.h
 
         src/LinearModels/LinearRegression.cpp
+        src/LinearModels/LogisticRegression.cpp
 
         src/Metrics/AccuracyScore.cpp
         src/Metrics/MeanSquaredError.cpp

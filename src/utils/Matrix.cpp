@@ -36,12 +36,15 @@ size_t Matrix::colCount() const {
 }
 
 Matrix Matrix::T() const {
+    // TODO: set while field building
     Matrix transponsedMatrix(col, row);
+
     for(int i = 0; i < row; i++) {
         for(int j = 0; j < col; j++) {
             transponsedMatrix.setElement(j, i, getElement(i, j));
         }
     }
+
     return transponsedMatrix;
 }
 
